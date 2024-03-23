@@ -9,6 +9,13 @@
         "com.unity.burst": "1.8.4"
       }
     },
+    "com.darktable.xrgizmos": {
+      "version": "https://github.com/darktable/XRGizmos.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "558f23b6ed48f7aabca66e190dac1a6bcb37bce8"
+    },
     "com.meta.xr.sdk.all": {
       "version": "59.0.0",
       "depth": 0,
