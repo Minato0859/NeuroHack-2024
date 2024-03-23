@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.darktable.xrgizmos": "https://github.com/darktable/XRGizmos.git",
+    "com.deltation.toon-shader": "https://github.com/Delt06/urp-toon-shader.git?path=Packages/com.deltation.toon-shader",
     "com.meta.xr.sdk.all": "59.0.0",
     "com.meta.xr.sdk.interaction.ovr.samples": "59.0.0",
     "com.unity.collab-proxy": "2.3.1",
