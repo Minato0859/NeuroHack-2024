@@ -8,7 +8,7 @@ public class NeuronHealth : MonoBehaviour
     public int BacteriaDamage = 1;
     public int CooldownTime = 10;
 
-    public float shakeMagnitude = 0.01f; // Adjust this value to control the intensity of the shake
+    public float shakeMagnitude = 0.0001f; // Adjust this value to control the intensity of the shake
     public float shakeDuration = 0.1f; // Adjust this value to control the duration of the shake
 
     private int counter = 0;

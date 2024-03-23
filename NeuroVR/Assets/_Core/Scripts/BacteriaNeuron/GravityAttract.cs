@@ -10,6 +10,8 @@ public class NewBehaviourScript : MonoBehaviour
     public float speed;
     public bool collided = false;
     private Rigidbody rb;
+    private Vector3 initialOffset;
+    private bool SourceMassAlive = true;
 
     // Start is called before the first frame update
     void Start()
@@ -20,10 +22,26 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!collided)
+        if (SourceMassAlive)
         {
-            print("moving");
-            TestMass.transform.position = Vector3.MoveTowards(TestMass.transform.position, SourceMass.transform.position, speed);
+            if (!collided)
+            {
+                TestMass.transform.position = Vector3.MoveTowards(TestMass.transform.position, SourceMass.transform.position, speed);
+            }
+            else
+            {
+                if (SourceMass != null)
+                {
+                    TestMass.transform.position = SourceMass.transform.position + initialOffset;
+                }
+                else
+                {
+                    // If the source mass is destroyed, apply gravity to the test mass
+                    rb.useGravity = true;
+                    rb.isKinematic = false;
+                    SourceMassAlive = false;
+                }
+            }
         }
     }
 
@@ -31,9 +49,9 @@ public class NewBehaviourScript : MonoBehaviour
     {
         if (other.gameObject.tag == "neuron")
         {
-            print("collided");
             collided = true;
             rb.isKinematic = true;
+            initialOffset = TestMass.transform.position - SourceMass.transform.position;
         }
     }
 }
