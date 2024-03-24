@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/FightInfection.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 0
@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/_Core/Scenes/MainScene-Neuro.unity
     guid: 49d7bd9a1d077df47b96df6a55e31120
-  - enabled: 1
+  - enabled: 0
     path: Assets/_Core/Scenes/BuildingBlocksVersion.unity
     guid: 1dba27f01bb40054285a987306482ef2
   m_configObjects:

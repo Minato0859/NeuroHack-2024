@@ -29,7 +29,7 @@ namespace GorillaZilla
         private bool isGameOver = false;
         private bool virusAlive = true;
 
-        private static int totalVirus = 2;
+        private static int totalVirus = 5;
         void Update()
         {
             //GameObject[] virusesAlive = GameObject.FindGameObjectsWithTag("bacteria");
@@ -66,9 +66,8 @@ namespace GorillaZilla
         {
             Wave wave = Wave.Copy(waveTemplate);
             //int numBuildings = Mathf.Min(waveTemplate.numVirus + waveNum, 20);
-            int numVirus = 2;
             //int numEnemies = Mathf.Min(10);
-            wave.numVirus = numVirus;
+            wave.numVirus = totalVirus;
             //wave.numEnemies = numEnemies;
             return wave;
         }
