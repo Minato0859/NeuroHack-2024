@@ -27,7 +27,18 @@ namespace GorillaZilla
         private int waveNum = 0;
 
         private bool isGameOver = false;
+        private bool virusAlive = true;
 
+        private static int totalVirus = 2;
+        void Update()
+        {
+            //GameObject[] virusesAlive = GameObject.FindGameObjectsWithTag("bacteria");
+            if(totalVirus <= 0)
+            {
+                virusAlive = false;
+                EndWave();
+            }
+        }
         private void Awake()
         {
             level = GetComponent<Level>();
@@ -55,9 +66,9 @@ namespace GorillaZilla
         {
             Wave wave = Wave.Copy(waveTemplate);
             //int numBuildings = Mathf.Min(waveTemplate.numVirus + waveNum, 20);
-            int numBuildings = 5;
+            int numVirus = 2;
             //int numEnemies = Mathf.Min(10);
-            wave.numVirus = numBuildings;
+            wave.numVirus = numVirus;
             //wave.numEnemies = numEnemies;
             return wave;
         }
@@ -65,6 +76,8 @@ namespace GorillaZilla
         public void StartGame()
         {
             waveNum = 0;
+            virusAlive = true;
+            totalVirus = 2;
             StartNextWave();
             player.Revive();
 
@@ -72,19 +85,21 @@ namespace GorillaZilla
         }
         void StartNextWave()
         {
+            virusAlive = true;
             curWave = MakeWave(waveNum);
             StartCoroutine(WaveSequence(curWave));
+            
         }
         void EndWave()
         {
             sfx_BackgroundMusic.Stop();
-            isGameOver=true;
-            if (!isGameOver)
-            {
-                waveNum++;
-                StartNextWave();
-                sfx_WaveEnd.Play();
-            }
+            GameOver();
+            //if (!isGameOver)
+           // {
+            //    waveNum++;
+             //   StartNextWave();
+             //   sfx_WaveEnd.Play();
+           // }
         }
         IEnumerator WaveSequence(Wave wave)
         {
@@ -108,7 +123,14 @@ namespace GorillaZilla
             level.ClearLevel();
             player.timeManipulator.enabled = false;
             isGameOver = true;
-            waveDisplay.ShowMessage("GAME OVER: You are now brain dead!");
+            if (!virusAlive)
+            {
+                waveDisplay.ShowMessage("The brain is saved!");
+            }else
+            {
+                waveDisplay.ShowMessage("GAME OVER: You are now brain dead!");
+            }
+            
             StartCoroutine(GameOverSequence());
         }
 
@@ -120,5 +142,12 @@ namespace GorillaZilla
             player.menu.OpenStartPage();
             player.Revive();
         }
+
+        public static void DecreaseTotalVirusByOne()
+        {
+            totalVirus -= 1;
+         
+        }
+      
     }
 }

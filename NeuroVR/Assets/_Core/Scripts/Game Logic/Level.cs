@@ -20,7 +20,7 @@ namespace GorillaZilla
         private Transform virusRoot;
         //private Transform enemiesRoot;
         private float buildingSpawnDelay = .025f;
-        //private List<Enemy> spawnedEnemies = new List<Enemy>();
+        //private List<GameObject> spawnedEnemies = new List<GameObject>();
 
         private void Awake()
         {
@@ -69,9 +69,12 @@ namespace GorillaZilla
 
                 // Instantiate the sphere prefab at the calculated position
                 GameObject neuron = Instantiate(neuronPrefab, spawnPosition, Quaternion.identity, virusRoot);
+               // NeuronHealth nh = neuron.GetComponent<NeuronHealth>();
+               // nh.Health = (i+1) * 20;
                 GameObject v1 = Instantiate(virusPrefab, spawnPosition, Quaternion.identity, virusRoot);
                 GravityAttract g = v1.GetComponent<GravityAttract>();
                 g.setSourceMass(neuron);
+                
                 yield return new WaitForSeconds(buildingSpawnDelay);
             }
             //Spawn Buildings

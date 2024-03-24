@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.Events;
 namespace GorillaZilla{
-public class GravityAttract : MonoBehaviour
+    
+
+    public class GravityAttract : MonoBehaviour
 {
 
     public float speed;
@@ -14,8 +16,8 @@ public class GravityAttract : MonoBehaviour
     private Vector3 initialOffset;
     private bool SourceMassAlive = true;
 
-    // Start is called before the first frame update
-    void Start()
+        // Start is called before the first frame update
+        void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
@@ -56,7 +58,9 @@ public class GravityAttract : MonoBehaviour
         }
         else if (other.gameObject.tag == "Hand")
         {
+            GameManager.DecreaseTotalVirusByOne();
             Destroy(gameObject);
+            
         }
     }
     
