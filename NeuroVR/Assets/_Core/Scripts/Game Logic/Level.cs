@@ -65,12 +65,15 @@ namespace GorillaZilla
                 // Get random position from available locations
                 int randomIndex = UnityEngine.Random.Range(0, availableLocations.Count);
                 Vector3 spawnPosition = availableLocations[randomIndex];
+                
+
                 availableLocations.RemoveAt(randomIndex);
 
                 // Instantiate the sphere prefab at the calculated position
                 GameObject neuron = Instantiate(neuronPrefab, spawnPosition, Quaternion.identity, virusRoot);
                // NeuronHealth nh = neuron.GetComponent<NeuronHealth>();
                // nh.Health = (i+1) * 20;
+                spawnPosition.y += 0.1f;
                 GameObject v1 = Instantiate(virusPrefab, spawnPosition, Quaternion.identity, virusRoot);
                 GravityAttract g = v1.GetComponent<GravityAttract>();
                 g.setSourceMass(neuron);

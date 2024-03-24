@@ -9636,6 +9636,7 @@ PrefabInstance:
     - {fileID: 5404856500676943854, guid: 6139fe0262e71604b8d2ef85ee7caef5, type: 3}
     - {fileID: 7757326847758568416, guid: 6139fe0262e71604b8d2ef85ee7caef5, type: 3}
     - {fileID: 8460811299947337856, guid: 6139fe0262e71604b8d2ef85ee7caef5, type: 3}
+    - {fileID: 527601085650921004, guid: 6139fe0262e71604b8d2ef85ee7caef5, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7526806355432991317, guid: 6139fe0262e71604b8d2ef85ee7caef5,
         type: 3}
@@ -11544,7 +11545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _handGrabState: {fileID: 1129048122}
-  _syntheticHand: {fileID: 0}
+  _syntheticHand: {fileID: 165405257}
 --- !u!1 &1657063029
 GameObject:
   m_ObjectHideFlags: 0
@@ -12215,7 +12216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _handGrabState: {fileID: 1053016576}
-  _syntheticHand: {fileID: 0}
+  _syntheticHand: {fileID: 772422343}
 --- !u!1 &1807514676
 GameObject:
   m_ObjectHideFlags: 0

@@ -40,7 +40,7 @@ namespace GorillaZilla{
                 else
                 {
                     // If the source mass is destroyed, apply gravity to the test mass
-                    rb.useGravity = true;
+                    //rb.useGravity = true;
                     rb.isKinematic = false;
                     SourceMassAlive = false;
                 }

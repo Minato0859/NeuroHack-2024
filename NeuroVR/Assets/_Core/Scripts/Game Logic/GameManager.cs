@@ -29,7 +29,7 @@ namespace GorillaZilla
         private bool isGameOver = false;
         private bool virusAlive = true;
 
-        private static int totalVirus = 2;
+        private static int totalVirus = 5;
         void Update()
         {
             //GameObject[] virusesAlive = GameObject.FindGameObjectsWithTag("bacteria");
