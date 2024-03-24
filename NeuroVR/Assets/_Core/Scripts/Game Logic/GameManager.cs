@@ -76,7 +76,7 @@ namespace GorillaZilla
         {
             waveNum = 0;
             virusAlive = true;
-            totalVirus = 2;
+            //totalVirus = 2;
             StartNextWave();
             player.Revive();
 
@@ -145,7 +145,7 @@ namespace GorillaZilla
         public static void DecreaseTotalVirusByOne()
         {
             totalVirus -= 1;
-         
+            print("viruses remaining: " +  totalVirus);
         }
       
     }
