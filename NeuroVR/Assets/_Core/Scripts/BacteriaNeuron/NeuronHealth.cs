@@ -7,25 +7,34 @@ public class NeuronHealth : MonoBehaviour
     public int Health = 100;
     public int BacteriaDamage = 1;
     public int CooldownTime = 10;
-
-    public float shakeMagnitude = 0.0001f; // Adjust this value to control the intensity of the shake
-    public float shakeDuration = 0.1f; // Adjust this value to control the duration of the shake
+    public float shakeDuration = 0.5f; // Adjust this value to control the duration of the shake
 
     private int counter = 0;
     private int numberOfBacterias = 0;
-    private Vector3 originalPosition;
+
+    private Color flashColor = new Color(1f, 0.5f, 0.5f, 0.5f); // Red color with transparency
+    private Color originalColor;
+
+    private Transform neuron;
+    private Transform cellTransform;
+    private Renderer cellRenderer;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        originalPosition = transform.position;
+        neuron = transform.Find("neuron1");
+        cellTransform = neuron.Find("cell");
+        cellRenderer = cellTransform.GetComponent<Renderer>();
+        originalColor = cellRenderer.material.color;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         //60fps therefore, this is one second * attack speed
-        if(counter == (60*CooldownTime))
+        if (counter == (60 * CooldownTime))
         {
             counter = 0;
             Health -= (BacteriaDamage * numberOfBacterias);
@@ -37,8 +46,8 @@ public class NeuronHealth : MonoBehaviour
             }
             else
             {
-                // Trigger shake effect
-                StartCoroutine(Shake());
+                // Trigger flash effect
+                StartCoroutine(FlashRed());
             }
         }
         counter += 1;
@@ -53,17 +62,13 @@ public class NeuronHealth : MonoBehaviour
         }
     }
 
-    private IEnumerator Shake()
+    private IEnumerator FlashRed()
     {
         float elapsedTime = 0f;
 
         while (elapsedTime < shakeDuration)
         {
-            // Calculate a random position within a range defined by shakeMagnitude
-            Vector3 shakePosition = originalPosition + Random.insideUnitSphere * shakeMagnitude;
-
-            // Set the object's position to the shakePosition
-            transform.position = shakePosition;
+            cellRenderer.material.color = flashColor;
 
             // Increment elapsedTime by the time since the last frame
             elapsedTime += Time.deltaTime;
@@ -71,11 +76,10 @@ public class NeuronHealth : MonoBehaviour
             if (elapsedTime >= shakeDuration)
             {
                 // Reset the object's position to its original position after the shake effect is finished
-                transform.position = originalPosition;
+                cellRenderer.material.color = originalColor;
             }
             // Yield execution of the coroutine until the next frame
             yield return null;
         }
     }
-
 }
