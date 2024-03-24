@@ -71,7 +71,7 @@ namespace GorillaZilla
                 GameObject neuron = Instantiate(neuronPrefab, spawnPosition, Quaternion.identity, virusRoot);
                 GameObject v1 = Instantiate(virusPrefab, spawnPosition, Quaternion.identity, virusRoot);
                 GravityAttract g = v1.GetComponent<GravityAttract>();
-                g.SourceMass = neuron;
+                g.setSourceMass(neuron);
                 yield return new WaitForSeconds(buildingSpawnDelay);
             }
             //Spawn Buildings

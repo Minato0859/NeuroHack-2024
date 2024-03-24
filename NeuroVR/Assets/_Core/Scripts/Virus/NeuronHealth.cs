@@ -10,7 +10,7 @@ public class NeuronHealth : MonoBehaviour
     public float shakeDuration = 0.5f; // Adjust this value to control the duration of the shake
 
     private int counter = 0;
-    private int numberOfBacterias = 0;
+    private int numberOfBacterias = 3;
 
     private Color flashColor = new Color(1f, 0.5f, 0.5f, 0.5f); // Red color with transparency
     private Color originalColor;
@@ -53,14 +53,14 @@ public class NeuronHealth : MonoBehaviour
         counter += 1;
     }
 
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "bacteria")
-        {
-            //print("Collided with neuron");
-            numberOfBacterias++; // Increment the collision counter
-        }
-    }
+    //private void OnCollisionEnter(Collision other)
+    //{
+    //    if (other.gameObject.tag == "bacteria")
+    //    {
+    //        //print("Collided with neuron");
+    //        numberOfBacterias++; // Increment the collision counter
+    //    }
+    //}
 
     private IEnumerator FlashRed()
     {

@@ -8,7 +8,7 @@ public class GravityAttract : MonoBehaviour
 
     public float speed;
 
-    public GameObject SourceMass;
+    private GameObject SourceMass;
     private bool collided = false;
     private Rigidbody rb;
     private Vector3 initialOffset;
@@ -58,6 +58,11 @@ public class GravityAttract : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    
+    public void setSourceMass(GameObject arg)
+    {
+        SourceMass = arg;
     }
 
  
