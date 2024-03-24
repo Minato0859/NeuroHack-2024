@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 5070182090560328210}
   - component: {fileID: 2295125626022855946}
   - component: {fileID: 8772762620491365187}
-  - component: {fileID: -497219173018996546}
   m_Layer: 0
   m_Name: Bacteria
   m_TagString: bacteria
@@ -172,21 +171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1df23953f9b2d2045baddfc6b36e38b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SourceMass: {fileID: 8775108828663719886, guid: 3effc2105322248c9932ebeee50822df,
-    type: 3}
+  SourceMass: {fileID: 0}
   speed: 0.1
---- !u!114 &-497219173018996546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 872380861044004411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f389242c3e8a4b46ad5114df84687e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &6105668318831609910
 PrefabInstance:
   m_ObjectHideFlags: 0

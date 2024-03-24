@@ -5,10 +5,10 @@ using UnityEngine;
 namespace GorillaZilla{
 public class GravityAttract : MonoBehaviour
 {
-    [Header("References")]
-    [SerializeField] public GameObject SourceMass;
-    [SerializeField] public float speed;
 
+    public float speed;
+
+    public GameObject SourceMass;
     private bool collided = false;
     private Rigidbody rb;
     private Vector3 initialOffset;
@@ -54,6 +54,12 @@ public class GravityAttract : MonoBehaviour
             rb.isKinematic = true;
             initialOffset = gameObject.transform.position - SourceMass.transform.position;
         }
+        else if (other.gameObject.tag == "Hand")
+        {
+            Destroy(gameObject);
+        }
     }
+
+ 
 }
 }

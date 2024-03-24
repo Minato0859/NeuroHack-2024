@@ -9,7 +9,8 @@ namespace GorillaZilla
     {
         [Header("References")]
         [SerializeField] RoomManager roomManager;
-        [SerializeField] GameObject spherePrefab;
+        [SerializeField] GameObject neuronPrefab;
+        [SerializeField] GameObject virusPrefab;
 
         [Header("Events")]
         public UnityEvent onWaveSpawned;
@@ -67,8 +68,10 @@ namespace GorillaZilla
                 availableLocations.RemoveAt(randomIndex);
 
                 // Instantiate the sphere prefab at the calculated position
-                Instantiate(spherePrefab, spawnPosition, Quaternion.identity, virusRoot);
-
+                GameObject neuron = Instantiate(neuronPrefab, spawnPosition, Quaternion.identity, virusRoot);
+                GameObject v1 = Instantiate(virusPrefab, spawnPosition, Quaternion.identity, virusRoot);
+                GravityAttract g = v1.GetComponent<GravityAttract>();
+                g.SourceMass = neuron;
                 yield return new WaitForSeconds(buildingSpawnDelay);
             }
             //Spawn Buildings
