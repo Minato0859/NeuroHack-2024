@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+namespace GorillaZilla{
+public class GravityAttract : MonoBehaviour
 {
-
-    public GameObject SourceMass;
-    public GameObject TestMass;
-    public float speed;
+    [Header("References")]
+    [SerializeField] public GameObject SourceMass;
+    [SerializeField] public float speed;
 
     private bool collided = false;
     private Rigidbody rb;
@@ -27,13 +27,13 @@ public class NewBehaviourScript : MonoBehaviour
         {
             if (!collided)
             {
-                TestMass.transform.position = Vector3.MoveTowards(TestMass.transform.position, SourceMass.transform.position, speed);
+                gameObject.transform.position = Vector3.MoveTowards(gameObject.transform.position, SourceMass.transform.position, speed);
             }
             else
             {
                 if (SourceMass != null)
                 {
-                    TestMass.transform.position = SourceMass.transform.position + initialOffset;
+                    gameObject.transform.position = SourceMass.transform.position + initialOffset;
                 }
                 else
                 {
@@ -52,7 +52,8 @@ public class NewBehaviourScript : MonoBehaviour
         {
             collided = true;
             rb.isKinematic = true;
-            initialOffset = TestMass.transform.position - SourceMass.transform.position;
+            initialOffset = gameObject.transform.position - SourceMass.transform.position;
         }
     }
+}
 }

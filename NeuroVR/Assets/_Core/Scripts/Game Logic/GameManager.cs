@@ -54,9 +54,10 @@ namespace GorillaZilla
         Wave MakeWave(int waveNum)
         {
             Wave wave = Wave.Copy(waveTemplate);
-            int numBuildings = Mathf.Min(waveTemplate.numVirus + waveNum, 20);
+            //int numBuildings = Mathf.Min(waveTemplate.numVirus + waveNum, 20);
+            int numBuildings = 5;
             //int numEnemies = Mathf.Min(10);
-            //wave.numBuildings = numBuildings;
+            wave.numVirus = numBuildings;
             //wave.numEnemies = numEnemies;
             return wave;
         }

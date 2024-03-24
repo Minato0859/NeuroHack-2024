@@ -2,9 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace GorillaZilla{
-
-
 public class NeuronHealth : MonoBehaviour
 {
     public int Health = 100;
@@ -85,5 +82,4 @@ public class NeuronHealth : MonoBehaviour
             yield return null;
         }
     }
-}
 }

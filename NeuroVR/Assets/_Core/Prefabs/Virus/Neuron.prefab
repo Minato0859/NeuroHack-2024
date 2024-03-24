@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2185585208875743401}
   - component: {fileID: 1184510407096453821}
   - component: {fileID: 5134405881324117251}
-  - component: {fileID: 3507775702745141984}
+  - component: {fileID: 4259028783282196743}
   m_Layer: 0
   m_Name: Neuron
   m_TagString: neuron
@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2699571529220939220}
@@ -133,7 +133,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -159,22 +159,22 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000001, y: 2, z: 1.0000002}
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &3507775702745141984
+--- !u!114 &4259028783282196743
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8775108828663719886}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01c1f276e763f4edc8ab7e35422165dd, type: 3}
+  m_Script: {fileID: 11500000, guid: 43d4e4ae0e5b8d74fbb946fe5bf8194b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Health: 100
   BacteriaDamage: 1
   CooldownTime: 10
-  shakeDuration: 0.01
+  shakeDuration: 0.5
 --- !u!1001 &2521021273434602047
 PrefabInstance:
   m_ObjectHideFlags: 0

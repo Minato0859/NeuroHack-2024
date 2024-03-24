@@ -15,7 +15,7 @@ namespace GorillaZilla
         public UnityEvent onWaveSpawned;
         public UnityEvent onLastEnemyDestroyed;
 
-        private Transform buildingsRoot;
+        //private Transform buildingsRoot;
         private Transform virusRoot;
         //private Transform enemiesRoot;
         private float buildingSpawnDelay = .025f;
