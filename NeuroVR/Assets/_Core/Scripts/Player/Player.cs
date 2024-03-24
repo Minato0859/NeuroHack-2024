@@ -18,24 +18,24 @@ namespace GorillaZilla
         [Header("References")]
         [SerializeField] public TimeManipulator timeManipulator;
         [SerializeField] public PlayerMenu menu;
-        [SerializeField] List<TriggerEvent> collidableBodyParts;
-        [SerializeField] List<PlayerAbility> playerAbilities;
+        //[SerializeField] List<TriggerEvent> collidableBodyParts;
+        //[SerializeField] List<PlayerAbility> playerAbilities;
         [SerializeField] AudioSource deathNoise;
         private PassthroughLayerController passthroughLayerController;
 
-        [Header("Events")]
-        public UnityEvent onPlayerHit;
+        // [Header("Events")]
+        // public UnityEvent onPlayerHit;
         void Start()
         {
             passthroughLayerController = GetComponent<PassthroughLayerController>();
-            foreach (var part in collidableBodyParts)
-            {
-                part.onTriggerEnter.AddListener(OnBodyTriggerCollision);
-            }
-            foreach (var ability in playerAbilities)
-            {
-                ability.onAbilityDeactivate.AddListener(OnAbilityDeactive);
-            }
+            // foreach (var part in collidableBodyParts)
+            // {
+            //     part.onTriggerEnter.AddListener(OnBodyTriggerCollision);
+            // }
+            // foreach (var ability in playerAbilities)
+            // {
+            //     ability.onAbilityDeactivate.AddListener(OnAbilityDeactive);
+            // }
         }
         private void OnAbilityDeactive()
         {
@@ -51,7 +51,7 @@ namespace GorillaZilla
         {
             passthroughLayerController.SetActiveLayer(deadLayer);
             deathNoise.Play();
-            onPlayerHit.Invoke();
+            //onPlayerHit.Invoke();
         }
         public void Revive()
         {
@@ -60,17 +60,17 @@ namespace GorillaZilla
         public void ActivateAbility(string abilityName)
         {
             passthroughLayerController.SetActiveLayer(toxicLayer);
-            foreach (var ability in playerAbilities)
-            {
-                if (ability.abilityName == abilityName)
-                {
-                    ability.Activate();
-                }
-                else
-                {
-                    ability.Deactivate();
-                }
-            }
+            // foreach (var ability in playerAbilities)
+            // {
+            //     if (ability.abilityName == abilityName)
+            //     {
+            //         ability.Activate();
+            //     }
+            //     else
+            //     {
+            //         ability.Deactivate();
+            //     }
+            // }
         }
 
     }

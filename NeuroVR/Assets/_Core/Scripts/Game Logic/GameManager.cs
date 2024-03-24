@@ -35,7 +35,7 @@ namespace GorillaZilla
             level.onLastEnemyDestroyed.AddListener(OnLastEnemyDestroyed);
 
             if (player == null) player = GameObject.FindObjectOfType<Player>();
-            player.onPlayerHit.AddListener(OnPlayerHit);
+            //player.onPlayerHit.AddListener(OnPlayerHit);
         }
 
         private void OnWaveSpawned()
@@ -55,9 +55,9 @@ namespace GorillaZilla
         {
             Wave wave = Wave.Copy(waveTemplate);
             int numBuildings = Mathf.Min(waveTemplate.numBuildings + waveNum, 20);
-            int numEnemies = Mathf.Min(waveTemplate.numEnemies + waveNum, 20);
+            //int numEnemies = Mathf.Min(10);
             wave.numBuildings = numBuildings;
-            wave.numEnemies = numEnemies;
+            //wave.numEnemies = numEnemies;
             return wave;
         }
         [ContextMenu("Start Game")]
@@ -77,6 +77,7 @@ namespace GorillaZilla
         void EndWave()
         {
             sfx_BackgroundMusic.Stop();
+            isGameOver=true;
             if (!isGameOver)
             {
                 waveNum++;
@@ -88,7 +89,7 @@ namespace GorillaZilla
         {
             player.timeManipulator.enabled = false;
 
-            waveDisplay.ShowMessage("WAVE " + (waveNum + 1));
+            waveDisplay.ShowMessage("Begin: Absorb the virus!");
             isGameOver = false;
             if (waveNum >= 1)
                 yield return StartCoroutine(level.ClearLevelAnimated(delayBetweenWaves));
@@ -106,7 +107,7 @@ namespace GorillaZilla
             level.ClearLevel();
             player.timeManipulator.enabled = false;
             isGameOver = true;
-            waveDisplay.ShowMessage("GAME OVER");
+            waveDisplay.ShowMessage("GAME OVER: You are now brain dead!");
             StartCoroutine(GameOverSequence());
         }
 

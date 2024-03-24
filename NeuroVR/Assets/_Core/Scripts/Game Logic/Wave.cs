@@ -8,18 +8,18 @@ namespace GorillaZilla
     public class Wave : ScriptableObject
     {
         public int numBuildings = 0;
-        public int numEnemies = 0;
+        //public int numEnemies = 0;
         public List<Spawnable> buildings;
-        public List<Spawnable> enemies;
-        public Spawnable powerUpBuilding;
+        //public List<Spawnable> enemies;
+        //public Spawnable powerUpBuilding;
         public Spawnable GetRandomBuilding()
         {
             return GetRandomSpawnable(buildings);
         }
-        public Spawnable GetRandomEnemy()
-        {
-            return GetRandomSpawnable(enemies);
-        }
+        // public Spawnable GetRandomEnemy()
+        // {
+        //     return GetRandomSpawnable(enemies);
+        // }
         private Spawnable GetRandomSpawnable(List<Spawnable> spawnables)
         {
             float[] weights = new float[spawnables.Count];
@@ -62,10 +62,10 @@ namespace GorillaZilla
         {
             Wave wave = ScriptableObject.CreateInstance<Wave>();
             wave.numBuildings = waveTemplate.numBuildings;
-            wave.numEnemies = waveTemplate.numEnemies;
+            //wave.numEnemies = waveTemplate.numEnemies;
             wave.buildings = waveTemplate.buildings;
-            wave.powerUpBuilding = waveTemplate.powerUpBuilding;
-            wave.enemies = waveTemplate.enemies;
+            //wave.powerUpBuilding = waveTemplate.powerUpBuilding;
+            //wave.enemies = waveTemplate.enemies;
             return wave;
         }
     }

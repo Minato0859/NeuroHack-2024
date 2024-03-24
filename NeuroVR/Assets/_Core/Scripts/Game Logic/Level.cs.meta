@@ -3,7 +3,11 @@ guid: 6f94ea6ce670fe64c8b1ba91920941e0
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - roomManager: {fileID: 7463309425559231005, guid: fe83bad1ac8c76b428ddb01b753e3089,
+      type: 3}
+  - spherePrefab: {fileID: 7682445011660167172, guid: 39ef14a59e4f51a40a5d4387fe00729d,
+      type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
