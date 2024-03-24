@@ -8,7 +8,8 @@ public class NewBehaviourScript : MonoBehaviour
     public GameObject SourceMass;
     public GameObject TestMass;
     public float speed;
-    public bool collided = false;
+
+    private bool collided = false;
     private Rigidbody rb;
     private Vector3 initialOffset;
     private bool SourceMassAlive = true;
