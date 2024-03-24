@@ -49,11 +49,11 @@ namespace GorillaZilla
         {
             //spawnedEnemies.Clear();
             //int numBuildings = wave.numBuildings;
-            int numVirus = wave.numBuildings;
+            int numVirus = wave.numVirus;
             //int numEnemies = wave.numEnemies;
-            List<Transform> enemySpawnPoints = new List<Transform>();
+            //List<Transform> enemySpawnPoints = new List<Transform>();
             List<Vector3> availableLocations = roomManager.GetAvailableSpawnLocations();
-            List<DestructableBuilding> destructableBuildings = new List<DestructableBuilding>();
+            //List<DestructableBuilding> destructableBuildings = new List<DestructableBuilding>();
             for (int i = 0; i < numVirus; i++)
             {
                 if (i > availableLocations.Count - 1)

@@ -7,15 +7,17 @@ namespace GorillaZilla
     [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Wave", order = 1)]
     public class Wave : ScriptableObject
     {
-        public int numBuildings = 0;
+        //public int numBuildings = 0;
+        public int numVirus = 0;
         //public int numEnemies = 0;
-        public List<Spawnable> buildings;
+        //public List<Spawnable> buildings;
+        public List<Spawnable> viruses;
         //public List<Spawnable> enemies;
         //public Spawnable powerUpBuilding;
-        public Spawnable GetRandomBuilding()
-        {
-            return GetRandomSpawnable(buildings);
-        }
+        // public Spawnable GetRandomBuilding()
+        // {
+        //     return GetRandomSpawnable(buildings);
+        // }
         // public Spawnable GetRandomEnemy()
         // {
         //     return GetRandomSpawnable(enemies);
@@ -61,9 +63,11 @@ namespace GorillaZilla
         public static Wave Copy(Wave waveTemplate)
         {
             Wave wave = ScriptableObject.CreateInstance<Wave>();
-            wave.numBuildings = waveTemplate.numBuildings;
+            //wave.numBuildings = waveTemplate.numBuildings;
+            wave.numVirus = waveTemplate.numVirus;
             //wave.numEnemies = waveTemplate.numEnemies;
-            wave.buildings = waveTemplate.buildings;
+            //wave.buildings = waveTemplate.buildings;
+            wave.viruses = waveTemplate.viruses;
             //wave.powerUpBuilding = waveTemplate.powerUpBuilding;
             //wave.enemies = waveTemplate.enemies;
             return wave;
