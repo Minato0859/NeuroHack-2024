@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5605520731876708685}
   - component: {fileID: 8949093550006512949}
   m_Layer: 0
-  m_Name: (Monster) Right HandVisual
+  m_Name: (Microglia) Right HandVisual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -3962,7 +3962,7 @@ GameObject:
   - component: {fileID: 7642865497745777972}
   - component: {fileID: 7807069385013713692}
   m_Layer: 0
-  m_Name: OVRHands (Monster)
+  m_Name: OVRHands (Microglia)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
