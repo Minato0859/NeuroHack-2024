@@ -8,7 +8,7 @@ namespace GorillaZilla
     public class Wave : ScriptableObject
     {
         //public int numBuildings = 0;
-        public int numVirus = 0;
+        public int numVirus = 5;
         //public int numEnemies = 0;
         //public List<Spawnable> buildings;
         public List<Spawnable> viruses;
